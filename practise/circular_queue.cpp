@@ -7,42 +7,59 @@ class Queue{
     private:
         int size{};
         int *arr{};
-        int idx{};
+        int front{};
+        int rear{};
+        int added_elements{};
 
     public:
-
         Queue(int size):size(size){
             arr = new int[size]; 
         }
 
-       void enqueue(int val) {  // O(1)
-            assert(!isFull()); 
-            arr[idx] = val;
-            idx++;
+         // utility to return next pos or idx
+        int next(int idx) { 
+            idx ++;
+            if(idx == size)
+                idx = 0;
+            return idx;
         }
 
-    //    int dequeue() {   // O(1)
-    //    }
-       int dequeue() {   // O(n)
-            int val = arr[0];
-            for(int i = 1; i < size ; i++){
-                arr[i-1] = arr[i];
-            }
-            idx--;
+       void enqueue(int val) {  // O(1)
+            assert(!isFull());
+            arr[rear] = val;
+            rear = next(rear);
+            added_elements ++;
+        }
+
+       int dequeue() {   // O(1)
+            assert(!isEmpty());
+            int val = arr[front];
+            front = next(front);
+            added_elements --;
             return val;
         }
 
         bool isFull(){
-            return idx == size;
+           return added_elements == size;
         }
         bool isEmpty(){
-            return idx == 0;
+           return added_elements == 0;
         }
         void display() {
-            for(int i = 0 ; i < idx; i++){
-                cout<<arr[i]<<" ";
+            cout<< " Front " << front <<" - rear " << rear <<"\t";
+            if(isFull()) {
+                cout<<"circular queue is full\n";
             }
-            cout<<"\n";
+            else if(isEmpty()) {
+                cout<<"circular queue is Empty\n";
+            }
+            
+            else {
+                for(int cur = front, step = 0 ; step < added_elements; cur = next(cur), step ++){
+                    cout<<arr[cur]<<" ";
+                }
+                cout<<"\n";
+                }
         }
 
 };
@@ -53,15 +70,10 @@ int main(){
     qu.enqueue(10);
     qu.enqueue(20);
     qu.enqueue(30);
-    qu.enqueue(40);
-    qu.enqueue(50);
-    qu.display();  // 10 20 30 40 50
+    qu.display();  // 10 20 30 
     qu.dequeue();
-    qu.display(); // 20 30 40 50
-    qu.dequeue();
-    qu.display(); // 30 40 50
-    qu.enqueue(5);
-    qu.display(); // 30 40 50 5
+    qu.display(); // 20 30 
+
 
     return 0;
 }

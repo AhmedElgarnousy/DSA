@@ -21,9 +21,7 @@ class Queue{
             idx++;
         }
 
-    //    int dequeue() {   // O(1)
-    //    }
-       int dequeue() {   // O(n)
+       int dequeue() {   // O(n)   shift left
             int val = arr[0];
             for(int i = 1; i < size ; i++){
                 arr[i-1] = arr[i];
