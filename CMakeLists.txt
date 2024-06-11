@@ -121,7 +121,12 @@ add_executable(QU_01_deque ${homework_queue_dir}/Queue_HW1_4Easy_Med/01_deque.cp
 
 #-----------------------------------------------------------------------------#
 # DS Homeworks BT BT_HW1_6Easy
-# add_executable(BT_ ${homework_Binary_Trees_dir}/BT_HW1_6Easy/01.cpp)
+add_executable(BT_01_tree_max ${homework_Binary_Trees_dir}/BT_HW1_6Easy/01_tree_max.cpp)
+add_executable(BT_02_tree_height ${homework_Binary_Trees_dir}/BT_HW1_6Easy/02_tree_height.cpp)
+add_executable(BT_03_count_all_nodes ${homework_Binary_Trees_dir}/BT_HW1_6Easy/03_count_all_nodes.cpp)
+add_executable(BT_04_count_leaf_nodes ${homework_Binary_Trees_dir}/BT_HW1_6Easy/04_count_leaf_nodes.cpp)
+add_executable(BT_05_search_the_tree ${homework_Binary_Trees_dir}/BT_HW1_6Easy/05_search_the_tree.cpp)
+add_executable(BT_06_is_perfect ${homework_Binary_Trees_dir}/BT_HW1_6Easy/06_is_perfect.cpp)
 
 # DS Homeworks BT BT_HW2_6Med-Hard
 # add_executable(BT_ ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/01.cpp)
