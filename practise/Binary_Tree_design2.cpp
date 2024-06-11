@@ -1,98 +1,71 @@
 #include <iostream>
+#include <cassert>
+#include <vector>
 
 using namespace std;
 
-struct Node
-{
-    // int data{};
-    string data{};
-    Node *right{};
-    Node *left{};
-    // Node(int Data) : data(Data) {}
-    Node(string Data) : data(Data) {}
-};
-
 class BinaryTree
 {
+private:
+    int data{};
+    BinaryTree *left{};
+    BinaryTree *right{};
+
+public:
+    BinaryTree(int data) : data(data)
+    {
+    }
+
+    void print_inorder()
+    { // LVR
+        if (left)
+            left->print_inorder();
+        cout << data << " ";
+        if (right)
+            right->print_inorder();
+    }
+
+    void add(vector<int> values, vector<char> direction)
+    {
+        assert(values.size() == direction.size());
+        BinaryTree *current = this;
+        // iterate on the path, create all necessary nodes
+        for (int i = 0; i < (int)values.size(); i++)
+        {
+            if (direction[i] == 'L')
+            {
+                if (!current->left)
+                    current->left = new BinaryTree(values[i]);
+                else
+                    assert(current->left->data == values[i]);
+                current = current->left;
+            }
+            else
+            {
+                if (!current->right)
+                    current->right = new BinaryTree(values[i]);
+                else
+                    assert(current->right->data == values[i]);
+                current = current->right;
+            }
+        }
+    }
+
+    ~BinaryTree()
+    {
+    }
 };
-
-void print(Node *p)
-{
-    if (!p)
-        return;
-    print(p->right);
-    print(p->left);
-    cout << p->data << "\n";
-}
-
-void print_inorder(Node *node)
-{ // LVR
-    if (!node)
-        return;
-    print_inorder(node->left);
-    cout << node->data << " ";
-    print_inorder(node->right);
-}
-void print_postorder(Node *node)
-{ // LRV
-    if (!node)
-        return;
-    print_inorder(node->left);
-    print_inorder(node->right);
-    cout << node->data << " ";
-}
-void print_preorder(Node *node)
-{ // VLR
-    if (!node)
-        return;
-    cout << node->data << " ";
-    print_inorder(node->left);
-    print_inorder(node->right);
-}
-void clear(Node *node)
-{
-    if (!node)
-        return;
-    clear(node->left);
-    cout << "node " << node->data << "  is free" << "\n";
-    delete node;
-    clear(node->right);
-}
 
 int main()
 {
-    // creation
-    Node *multiply = new Node("*");
-    Node *plus = new Node("+");
-    Node *minus = new Node("-");
-    Node *divide = new Node("/");
-    Node *node2 = new Node("2");
-    Node *node3 = new Node("3");
-    Node *node9 = new Node("9");
-    Node *node4 = new Node("4");
-    Node *node8 = new Node("8");
+    BinaryTree tree(1);
+    tree.add({2, 4, 7}, {'L', 'L', 'L'});
+    tree.add({2, 4, 8}, {'L', 'L', 'R'});
+    tree.add({2, 5, 9}, {'L', 'R', 'R'});
+    tree.add({3, 6, 10}, {'R', 'R', 'L'});
 
-    // linking
-    multiply->left = plus;
-    multiply->right = minus;
-
-    plus->left = node2;
-    plus->right = node3;
-
-    minus->left = node9;
-    minus->right = divide;
-
-    divide->left = node8;
-    divide->right = node4;
-
-    // printing
-    print_inorder(multiply);
-    cout << "\n";
-    clear(multiply);
-    // print_postorder(plus);
-    // cout << "\n";
-    // print_preorder(plus);
-    // cout << "\n";
+    tree.print_inorder();
+    // 7 4 8 2 5 9 1 3 10 6
 
     return 0;
 }

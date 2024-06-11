@@ -4,16 +4,6 @@
 
 using namespace std;
 
-struct Node
-{
-    // int data{};
-    string data{};
-    Node *right{};
-    Node *left{};
-    // Node(int Data) : data(Data) {}
-    Node(string Data) : data(Data) {}
-};
-
 class BinaryTree
 {
 private:
