@@ -90,14 +90,6 @@ void test1_numbers()
     tree.add({3, 6, 15}, {'R', 'R', 'L'});
 
     assert(tree.tree_max() == 50);
-    // assert(tree.tree_height() == 3);
-    // assert(tree.total_nodes() == 10);
-    // assert(tree.leafs_count() == 4);
-
-    // assert(tree.is_exists(1));
-    // assert(tree.is_exists(15));
-    // assert(tree.is_exists(4));
-    // assert(!tree.is_exists(61));
 }
 
 int main()

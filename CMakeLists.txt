@@ -121,12 +121,15 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 
 #-----------------------------------------------------------------------------#
 # DS Homeworks BT BT_HW1_6Easy
-add_executable(BT_01_tree_max ${homework_Binary_Trees_dir}/BT_HW1_6Easy/01_tree_max.cpp)
-# add_executable(BT_02_tree_height ${homework_Binary_Trees_dir}/BT_HW1_6Easy/02_tree_height.cpp)
-# add_executable(BT_03_count_all_nodes ${homework_Binary_Trees_dir}/BT_HW1_6Easy/03_count_all_nodes.cpp)
-# add_executable(BT_04_count_leaf_nodes ${homework_Binary_Trees_dir}/BT_HW1_6Easy/04_count_leaf_nodes.cpp)
-# add_executable(BT_05_search_the_tree ${homework_Binary_Trees_dir}/BT_HW1_6Easy/05_search_the_tree.cpp)
-# add_executable(BT_06_is_perfect ${homework_Binary_Trees_dir}/BT_HW1_6Easy/06_is_perfect.cpp)
+# add_executable(BT_01_tree_max ${homework_Binary_Trees_dir}/BT_HW1_6Easy/01_tree_max.cpp)
+# add_executable(BT_1_tree_max ${homework_Binary_Trees_dir}/BT_HW1_6Easy/1_tree_max.cpp)
+add_executable(BT_2_leetcode_104_depth ${homework_Binary_Trees_dir}/BT_HW1_6Easy/2_leetcode_104_depth.cpp)
+# add_executable(BT_3_leetcode_112_path_sum_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/3_leetcode_112_path_sum_v1.cpp)
+# add_executable(BT_3_leetcode_112_path_sum_v2${homework_Binary_Trees_dir}/BT_HW1_6Easy/3_leetcode_112_path_sum_v2.cpp)
+# add_executable(BT_4_leetcode_404_sum_left_leaves ${homework_Binary_Trees_dir}/BT_HW1_6Easy/4_leetcode_404_sum_left_leaves.cpp)
+# add_executable(BT_5_leetcode_993_cousins_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/5_leetcode_993_cousins_v1.cpp)
+# add_executable(BT_5_leetcode_993_cousins_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/5_leetcode_993_cousins_v2.cpp)
+# add_executable(BT_06_is_perfect ${homework_Binary_Trees_dir}/BT_HW1_6Easy/6_is_perfect.cpp)
 
 # DS Homeworks BT BT_HW2_6Med-Hard
 # add_executable(BT_ ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/01.cpp)
