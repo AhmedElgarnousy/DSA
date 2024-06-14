@@ -64,27 +64,18 @@ struct BinaryTree
 	}
 };
 
-bool isLeaf(TreeNode *node)
-{
-	return node && !node->left && !node->right;
-}
-
 class Solution
 {
 public:
 	int maxDepth(TreeNode *root)
 	{
-		int left_depth = 0, right_depth = 0;
-
 		if (!root)
 			return 0;
 
-		left_depth = maxDepth(root->left);
-		// cout << left_depth << "\n";
-		right_depth = maxDepth(root->right);
-		// cout << right_depth << "\n";
+		int leftDepth = maxDepth(root->left);
+		int rightDepth = maxDepth(root->right);
 
-		return 1 + max(left_depth, right_depth);
+		return 1 + max(leftDepth, rightDepth);
 	}
 };
 
@@ -105,3 +96,18 @@ int main()
 
 	return 0;
 }
+
+// int maxDepth(TreeNode *root)
+// {
+// 	int left_depth = 0, right_depth = 0;
+
+// 	if (!root)
+// 		return 0;
+
+// 	left_depth = maxDepth(root->left);
+// 	// cout << left_depth << "\n";
+// 	right_depth = maxDepth(root->right);
+// 	// cout << right_depth << "\n";
+
+// 	return 1 + max(left_depth, right_depth);
+// }

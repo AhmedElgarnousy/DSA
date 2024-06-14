@@ -68,22 +68,31 @@ struct BinaryTree
 class Solution
 {
 public:
+	bool isPerfect(TreeNode *root)
+	{
+		if (!root->left && !root->right)
+			isPerfect(root->left) && isPerfect(root->right);
+		else
+			return 0;
+	}
 };
 
 int main()
 { // rename like main1 for leetcode
 	BinaryTree tree(1);
+	// TreeNode tree(1);
 
 	// assert(Solution()._isPerfect_cnt(tree.root).first == 1);
 
-	tree.add({2}, {'L'});
+	// tree.add({2}, {'L'});
 	// assert(Solution()._isPerfect_cnt(tree.root).first == 0);
 
-	tree.add({3}, {'R'});
+	// tree.add({3}, {'R'});
 	// assert(Solution()._isPerfect_cnt(tree.root).first == 1);
 
 	tree.add({3, 6}, {'R', 'R'});
 	tree.add({3, 14}, {'R', 'L'});
+	// cout << Solution().isPerfect(tree);
 	// assert(Solution()._isPerfect_cnt(tree.root).first == 0);
 
 	tree.add({2, 4, 7}, {'L', 'L', 'L'});
