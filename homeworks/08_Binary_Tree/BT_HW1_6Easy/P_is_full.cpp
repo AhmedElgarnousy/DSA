@@ -2,6 +2,8 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
+#include <queue>
+
 using namespace std;
 
 struct TreeNode
@@ -61,6 +63,31 @@ struct BinaryTree
         _printInorder(root);
         cout << "\n";
     }
+    void level_order_traversal2()
+    {
+        queue<TreeNode *> nodes_queue;
+        nodes_queue.push(root);
+
+        int level = 0;
+        while (!nodes_queue.empty())
+        {
+            int curQueueSize = nodes_queue.size();
+            cout << "level " << level << ": ";
+            while (curQueueSize--)
+            {
+                TreeNode *cur = nodes_queue.front();
+                nodes_queue.pop();
+
+                cout << cur->val << " ";
+                if (cur->left)
+                    nodes_queue.push(cur->left);
+                if (cur->right)
+                    nodes_queue.push(cur->right);
+            }
+            level++;
+            cout << "\n";
+        }
+    }
 };
 
 bool isLeaf(TreeNode *node)
@@ -71,27 +98,30 @@ bool isLeaf(TreeNode *node)
 class Solution
 {
 public:
-    bool isPerfect(TreeNode *root)
+    bool isFull(TreeNode *root)
     {
-        if (!root->left && !root->right)
-            isPerfect(root->left) && isPerfect(root->right);
-        else
+        if (!root)
             return 0;
+
+        if (isLeaf(root)) // there is no nodes
+            return 1;
+        if ((!root->left && root->right) || (root->left && !root->right)) // there is one node
+            return 0;
+
+        return isFull(root->left) && isFull(root->right); // else there are 2 nodes so recuse again on L&R
     }
 };
 
 int main()
 { // rename like main1 for leetcode
     BinaryTree tree(5);
-    tree.add({4, 11, 7}, {'L', 'L', 'L'});
-    tree.add({4, 11, 2}, {'L', 'L', 'R'});
+    tree.add({4, 11}, {'L', 'L'});
+    tree.add({4, 2}, {'L', 'R'});
     tree.add({8, 11}, {'R', 'L'});
-    tree.add({8, 4, 1}, {'R', 'R', 'R'});
+    tree.add({8, 4}, {'R', 'R'});
+    // tree.add({8, 4, 1}, {'R', 'R', 'R'});
 
-    // cout << Solution().hasPathSum(tree.root, 17) << "\n";
-    cout << Solution().hasPathSum(tree.root, 17) << "\n";
-    // cout << Solution().hasPathSum(tree.root, 170) << "\n";
-    // cout << Solution().hasPathSum(tree.root, 0) << "\n";
-
+    // cout << Solution().isFull(tree.root) << "\n";
+    tree.level_order_traversal2();
     return 0;
 }

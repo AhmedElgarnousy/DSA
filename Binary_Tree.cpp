@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -25,7 +26,12 @@ public:
         if (right)
             right->print_inorder();
     }
-
+    void level_order_traversal1()
+    {
+    }
+    void level_order_traversal2()
+    {
+    }
     void add(vector<int> values, vector<char> direction)
     {
         assert(values.size() == direction.size());

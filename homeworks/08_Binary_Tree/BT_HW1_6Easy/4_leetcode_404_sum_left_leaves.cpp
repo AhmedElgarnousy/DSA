@@ -64,20 +64,50 @@ struct BinaryTree
 	}
 };
 
+bool isLeaf(TreeNode *node)
+{
+	return node && !node->left && !node->right;
+}
+bool isHasLeftLeaf(TreeNode *node)
+{
+	return node->left && !node->left->left && !node->right->right;
+}
+
 class Solution
 {
 public:
+	int sumOfLeftLeaves(TreeNode *root)
+	{
+		int leftLeavesSum = 0;
+		if (!root)
+			return 0;
+
+		if (isLeaf(root->left))
+			leftLeavesSum += root->left->val;
+
+		leftLeavesSum += sumOfLeftLeaves(root->left);
+		leftLeavesSum += sumOfLeftLeaves(root->right);
+
+		return leftLeavesSum;
+	}
 };
 
 int main()
 { // rename like main1 for leetcode
+	// BinaryTree tree(2);
+	// tree.add({9}, {'L'});
+	// tree.add({20, 15}, {'R', 'L'});
+	// tree.add({20, 7}, {'R', 'R'});
+
+	// cout << Solution().sumOfLeftLeaves(tree.root) << "\n"; // 24
+
 	BinaryTree tree(1);
 	tree.add({2, 4, 7}, {'L', 'L', 'L'});
 	tree.add({2, 4, 8}, {'L', 'L', 'R'});
 	tree.add({2, 5, 9}, {'L', 'R', 'R'});
 	tree.add({3, 6, 10}, {'R', 'R', 'L'});
 
-	// cout << Solution().sumOfLeftLeaves(tree.root) << "\n";	// 17
+	cout << Solution().sumOfLeftLeaves(tree.root) << "\n"; // 17
 
 	return 0;
 }

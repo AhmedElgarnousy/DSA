@@ -126,13 +126,17 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable(BT_2_leetcode_104_depth ${homework_Binary_Trees_dir}/BT_HW1_6Easy/2_leetcode_104_depth.cpp)
 # add_executable(bt_P_Leetcode_1448_count_good_nodes ${homework_Binary_Trees_dir}/BT_HW1_6Easy/P_Leetcode_1448_count_good_nodes_BT.cpp)
 # add_executable(BT_3_leetcode_112_path_sum_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/3_leetcode_112_path_sum_v1.cpp)
-add_executable(leetcode_112_path_sum_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/3_leetcode_112_path_sum_v2.cpp)
+# add_executable(leetcode_112_path_sum_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/3_leetcode_112_path_sum_v2.cpp)
 # add_executable(BT_4_leetcode_404_sum_left_leaves ${homework_Binary_Trees_dir}/BT_HW1_6Easy/4_leetcode_404_sum_left_leaves.cpp)
 # add_executable(BT_5_leetcode_993_cousins_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/5_leetcode_993_cousins_v1.cpp)
 # add_executable(BT_5_leetcode_993_cousins_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/5_leetcode_993_cousins_v2.cpp)
-# add_executable(BT_06_is_perfect ${homework_Binary_Trees_dir}/BT_HW1_6Easy/6_is_perfect.cpp)
+add_executable(BT_06_is_FULL ${homework_Binary_Trees_dir}/BT_HW1_6Easy/P_is_full.cpp)
+# add_executable(BT_06_is_perfect_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/6_is_perfect_v1.cpp)
+# add_executable(BT_06_is_perfect_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/6_is_perfect_v2.cpp)
 
 # DS Homeworks BT BT_HW2_6Med-Hard
+# add_executable(4_BT_Diameter_v1 ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/4_BT_Diameter_v1.cpp)
+# add_executable(4_BT_Diameter_v2 ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/4_BT_Diameter_v2.cpp)
 # add_executable(BT_ ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/01.cpp)
 
 # DS Homeworks BT BT_HW3_3Med-Hard
