@@ -130,14 +130,14 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable(BT_4_leetcode_404_sum_left_leaves ${homework_Binary_Trees_dir}/BT_HW1_6Easy/4_leetcode_404_sum_left_leaves.cpp)
 # add_executable(BT_5_leetcode_993_cousins_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/5_leetcode_993_cousins_v1.cpp)
 # add_executable(BT_5_leetcode_993_cousins_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/5_leetcode_993_cousins_v2.cpp)
-add_executable(BT_06_is_FULL ${homework_Binary_Trees_dir}/BT_HW1_6Easy/P_is_full.cpp)
+# add_executable(BT_06_is_FULL ${homework_Binary_Trees_dir}/BT_HW1_6Easy/P_is_full.cpp)
 # add_executable(BT_06_is_perfect_v1 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/6_is_perfect_v1.cpp)
 # add_executable(BT_06_is_perfect_v2 ${homework_Binary_Trees_dir}/BT_HW1_6Easy/6_is_perfect_v2.cpp)
 
 # DS Homeworks BT BT_HW2_6Med-Hard
+add_executable(1_leetcode_103_Zigzag ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/1_leetcode_103_Zigzag.cpp)
 # add_executable(4_BT_Diameter_v1 ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/4_BT_Diameter_v1.cpp)
 # add_executable(4_BT_Diameter_v2 ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/4_BT_Diameter_v2.cpp)
-# add_executable(BT_ ${homework_Binary_Trees_dir}/BT_HW2_6Med-Hard/01.cpp)
 
 # DS Homeworks BT BT_HW3_3Med-Hard
 # add_executable( BT_ ${homework_Binary_Trees_dir}/BT_HW3_3Med-Hard/01.cpp)

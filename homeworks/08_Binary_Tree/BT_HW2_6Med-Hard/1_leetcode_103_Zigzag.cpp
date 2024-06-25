@@ -63,10 +63,11 @@ struct BinaryTree
         _printInorder(root);
         cout << "\n";
     }
-    void level_order_traversal2()
+
+    void zigzag()
     {
-        queue<TreeNode *> nodes_queue;
-        nodes_queue.push(root);
+        deque<TreeNode *> nodes_queue;
+        nodes_queue.push_front(root);
 
         int level = 0;
         while (!nodes_queue.empty())
@@ -75,14 +76,28 @@ struct BinaryTree
             cout << "level " << level << ": ";
             while (curQueueSize--)
             {
-                TreeNode *cur = nodes_queue.front();
-                nodes_queue.pop();
+                if (level % 2 == 0)
+                {
+                    TreeNode *cur = nodes_queue.back();
+                    nodes_queue.pop_back();
 
-                cout << cur->val << " ";
-                if (cur->left)
-                    nodes_queue.push(cur->left);
-                if (cur->right)
-                    nodes_queue.push(cur->right);
+                    cout << cur->val << " ";
+                    if (cur->left)
+                        nodes_queue.push_front(cur->left);
+                    if (cur->right)
+                        nodes_queue.push_front(cur->right);
+                }
+                else
+                {
+                    TreeNode *cur = nodes_queue.front();
+                    nodes_queue.pop_front();
+
+                    cout << cur->val << " ";
+                    if (cur->right)
+                        nodes_queue.push_back(cur->right);
+                    if (cur->left)
+                        nodes_queue.push_back(cur->left);
+                }
             }
             level++;
             cout << "\n";
@@ -98,17 +113,23 @@ bool isLeaf(TreeNode *node)
 class Solution
 {
 public:
-    // diametere v2
+    void zigzag()
+    {
+    }
 };
 
 int main()
 { // rename like main1 for leetcode
+    // BinaryTree tree(5);
+    // tree.add({4, 11}, {'L', 'L'});
+    // tree.add({4, 2}, {'L', 'R'});
+    // tree.add({8, 9}, {'R', 'L'});
+    // tree.add({8, 4}, {'R', 'R'});
     BinaryTree tree(5);
-    tree.add({4, 11}, {'L', 'L'});
-    tree.add({4, 2}, {'L', 'R'});
-    tree.add({8, 11}, {'R', 'L'});
-    tree.add({8, 4}, {'R', 'R'});
+    tree.add({2, 4, 10}, {'L', 'L', 'R'});
+    tree.add({3, 1, 11}, {'R', 'R', 'L'});
+    tree.add({3, 1, 0}, {'R', 'R', 'R'});
 
-    tree.level_order_traversal2();
+    tree.zigzag();
     return 0;
 }
