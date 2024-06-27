@@ -22,6 +22,8 @@ set(homework_Hashing_dir "${CMAKE_SOURCE_DIR}/homeworks/07_queue")
 # add_executable(doubly_linkedList doubly_linkedList.cpp)
 # add_executable(stack stack.cpp)
 # add_executable(queue queue.cpp)
+# add_executable(Binary_Tree Binary_Tree.cpp)
+add_executable(Binary_Search_Tree Binary_Search_Tree.cpp)
 
 # add_executable(complexity complexity.cpp)
 

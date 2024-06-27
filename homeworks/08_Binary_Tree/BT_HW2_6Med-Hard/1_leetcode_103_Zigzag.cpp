@@ -125,6 +125,7 @@ int main()
     // tree.add({4, 2}, {'L', 'R'});
     // tree.add({8, 9}, {'R', 'L'});
     // tree.add({8, 4}, {'R', 'R'});
+
     BinaryTree tree(5);
     tree.add({2, 4, 10}, {'L', 'L', 'R'});
     tree.add({3, 1, 11}, {'R', 'R', 'L'});
