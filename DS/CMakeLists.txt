@@ -10,10 +10,10 @@ set(homework_stack_dir"${CMAKE_SOURCE_DIR}/homeworks/06_stack")
 set(homework_queue_dir "${CMAKE_SOURCE_DIR}/homeworks/07_queue")
 set(homework_Binary_Trees_dir "${CMAKE_SOURCE_DIR}/homeworks/08_Binary_Tree")
 set(homework_BST_dir "${CMAKE_SOURCE_DIR}/homeworks/09_Binary_Search_Trees")
-set(homework_Binary_Heap_dir "${CMAKE_SOURCE_DIR}/homeworks/11_AVL")
-set(homework_AVL_dir "${CMAKE_SOURCE_DIR}/homeworks/12_Trie")
-set(homework_Trie_dir "${CMAKE_SOURCE_DIR}/homeworks/13_Hashing")
-set(homework_Hashing_dir "${CMAKE_SOURCE_DIR}/homeworks/07_queue")
+set(homework_Binary_Heap_dir "${CMAKE_SOURCE_DIR}/homeworks/10_Binary_Heap")
+set(homework_AVL_dir "${CMAKE_SOURCE_DIR}/homeworks/11_AVL")
+set(homework_Trie_dir "${CMAKE_SOURCE_DIR}/homeworks/12_Trie")
+set(homework_Hashing_dir "${CMAKE_SOURCE_DIR}/homeworks/13_Hashing")
 
 # DS Implementation
 # add_executable(test test.cpp)
@@ -28,7 +28,8 @@ add_executable(Binary_Search_Tree Binary_Search_Tree.cpp)
 # add_executable(complexity complexity.cpp)
 
 
-#-----------------------------------------------------------------------------#
+#----------------------------Vector----------------------------#
+
 # DS Homeworks vector
 # add_executable(HW_right_rotation ${homework_vector_dir}/right_rotation.cpp)
 # add_executable(HW_left_rotation ${homework_vector_dir}/left_rotation.cpp)
@@ -36,9 +37,9 @@ add_executable(Binary_Search_Tree Binary_Search_Tree.cpp)
 # add_executable(HW_del_a_pos ${homework_vector_dir}/del_a_pos.cpp)
 # add_executable(HW_improved_search ${homework_vector_dir}/improved_search.cpp)
 
-#-----------------------------------------------------------------------------#
 
-#-------------------------- Done alhamdallah (1 - 2 - 3 - 4 - 5)--------------------------#
+#---------------------------singly linked list----------------------------#
+
 # DS Homeworks singly_linkedList HW1-6Easy
 # add_executable( SLL_01_destructor ${homework_SLL_dir}/SLL-HW1-6Easy/01_destructor.cpp)
 # add_executable( SLL_02_insert_front ${homework_SLL_dir}/SLL-HW1-6Easy/02_insert_front.cpp)
@@ -47,7 +48,6 @@ add_executable(Binary_Search_Tree Binary_Search_Tree.cpp)
 # add_executable( SLL_05_same_list_data ${homework_SLL_dir}/SLL-HW1-6Easy/05_is_same_list_data.cpp)
 add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-HW1-6Easy/06_linked_list_without_tail_length.cpp)
 
-#----------------------------------------------------#
 # DS Homeworks singly_linkedList HW2-5Easy
 # add_executable( SLL_01_delete_with_key ${homework_SLL_dir}/SLL-HW2-5Easy/01_delete_with_key.cpp)
 # add_executable( SLL_02_swap_each_pair_vales ${homework_SLL_dir}/SLL-HW2-5Easy/02_swap_each_pair_vales.cpp)
@@ -69,7 +69,9 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable(SLL_03_adding_2_huge_numbers  ${homework_SLL_dir}/SLL-HW4-5Med-Hard/03_adding_2_huge_numbers.cpp)
 # add_executable(SLL_04_remove_all_repeated  ${homework_SLL_dir}/SLL-HW4-5Med-Hard/04_remove_all_repeated.cpp)
 # add_executable(SLL_05_reverse_chains  ${homework_SLL_dir}/SLL-HW4-5Med-Hard/05_reverse_chains.cpp)
-#-----------------------------------------------------------------------------#
+
+
+#---------------------------doubly linked list----------------------------#
 
 # DS Homeworks doubly_linkedList HW1-4Easy-Med
 # add_executable(DLL_01_delete_all_nodes_with_key ${homework_DLL_dir}/DLL-HW1-4Easy-Med/01_delete_all_nodes_with_key.cpp)
@@ -82,7 +84,8 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable(DLL_02_swap_forward_with_backward ${homework_DLL_dir}/DLL-HW2-4Med-Hard/02_swap_forward_with_backward.cpp)
 # add_executable(DLL_03_reverse_list_nodes ${homework_DLL_dir}/DLL-HW2-4Med-Hard/03_reverse_list_nodes.cpp)
 # add_executable(DLL_04_merge_lists ${homework_DLL_dir}/DLL-HW2-4Med-Hard/04_merge_lists.cpp)
-#-----------------------------------------------------------------------------#
+
+#---------------------------stack----------------------------#
 
 # DS Homeworks stack HW1-6Easy-Med
 # add_executable( STK_01_student_stack ${homework_stack_dir}/Stack-HW1-6Easy_Med/01_student_stack.cpp)
@@ -105,7 +108,9 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable( STK_02_evalaute_postfix ${homework_stack_dir}/Stack-HW3-5Med_Hard/02_evalaute_postfix.cpp)
 # add_executable( STK_03_infix_to_prefix ${homework_stack_dir}/Stack-HW3-5Med_Hard/03_infix_to_prefix.cpp)
 # add_executable( STK_05_remove_brackets ${homework_stack_dir}/Stack-HW3-5Med_Hard/05_remove_brackets.cpp)
-#-----------------------------------------------------------------------------#
+
+
+#---------------------------Queue----------------------------#
 
 # DS Homeworks queue HW1-4Easy_Med
 # add_executable(QU_01_deque ${homework_queue_dir}/Queue_HW1_4Easy_Med/01_deque.cpp)
@@ -117,13 +122,13 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable(QU_01_priority ${homework_queue_dir}/Queue_HW2_3Med_Hard/01_priority.cpp)
 # add_executable(QU_02_queue_no_added_elem ${homework_queue_dir}/Queue_HW2_3Med_Hard/02_queue_no_added_elem.cpp)
 # add_executable(QU_03_numbers_stream ${homework_queue_dir}/Queue_HW2_3Med_Hard/03_numbers_stream.cpp)
-#-----------------------------------------------------------------------------#
 
-#*******************************NON_Linear_Data Structures****************************#
+            #---------------------------------------------------------------------------#
+            #**************************NON_Linear_Data Structures***********************#
+            #---------------------------------------------------------------------------#
 
-#*******************************Binary Tree****************************#
+#---------------------------Binary Tree----------------------------#
 
-#-----------------------------------------------------------------------------#
 # DS Homeworks BT BT_HW1_6Easy
 # add_executable(BT_01_tree_max ${homework_Binary_Trees_dir}/BT_HW1_6Easy/01_tree_max.cpp)
 # add_executable(BT_1_tree_max ${homework_Binary_Trees_dir}/BT_HW1_6Easy/1_tree_max.cpp)
@@ -151,9 +156,9 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable( 2_leetcode_951_Flip_Equivalent ${homework_Binary_Trees_dir}/BT_HW3_3Med-Hard/2_leetcode_951_Flip_Equivalent.cpp)
 # add_executable( 3_duplicate ${homework_Binary_Trees_dir}/BT_HW3_3Med-Hard/3_duplicate.cpp)
 
-#-----------------------------------------------------------------------------#
 
-                #*******************************Binary Search Tree****************************#
+#---------------------------Binary Search Tree----------------------------#
+
 # DS Homeworks BST BST_HW1_2Easy
 # add_executable(BST_ ${homework_BST_dir}/BST_HW1_2Easy/01.cpp)
 
@@ -163,24 +168,29 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # DS Homeworks BST BST_HW3_3Med
 # add_executable( BST_${homework_BST_dir}/BST_HW3_3Med/01.cpp)
 
-#-----------------------------------------------------------------------------#
 
-                #*******************************Heap****************************#
+#---------------------------Heap----------------------------#
 
 # DS Homeworks BH BH_HW1_5Easy_Med
-# add_executable(BH_ ${homework_Binary_Heap_dir}/BH_HW1_5Easy_Med/01.cpp)
+# add_executable(BH_01_max_heap ${homework_Binary_Heap_dir}/BH_HW1_5Easy_Med/01_max_heap.cpp)
+# add_executable(BH_02_max_heap_v2 ${homework_Binary_Heap_dir}/BH_HW1_5Easy_Med/02_max_heap_v2.cpp)
+# add_executable(BH_03_print_less ${homework_Binary_Heap_dir}/BH_HW1_5Easy_Med/03_print_less.cpp)
+# add_executable(BH_04_is_heap ${homework_Binary_Heap_dir}/BH_HW1_5Easy_Med/04_is_heap.cpp)
+# add_executable(BH_05_heap_sort ${homework_Binary_Heap_dir}/BH_HW1_5Easy_Med/05_heap_sort.cpp)
 
 # DS Homeworks Bin_Heap BST_HW2_3Med
 # add_executable( BH_ ${homework_Binary_Heap_dir}/BST_HW2_3Med/01.cpp)
+# add_executable( BH_ ${homework_Binary_Heap_dir}/BST_HW2_3Med/01.cpp)
+# add_executable( BH_ ${homework_Binary_Heap_dir}/BST_HW2_3Med/01.cpp)
 
-#-----------------------------------------------------------------------------#
 
+#---------------------------AVL----------------------------#
 
-                #******************************AVL****************************#
 # DS Homeworks AVL AVL_HW1_7Med_Hard
 # add_executable(AVL_ ${homework_AVL_dir}/AVL_HW1_7Med_Hard/01.cpp)
 
-#-----------------------------------------------------------------------------#
+
+#---------------------------Trie----------------------------#
 
 # DS Homeworks Trie Trie_HW1_5Easy_Med
 # add_executable(Trie_ ${homework_Trie_dir}/Trie_HW1_5Easy_Med/01.cpp)
@@ -191,9 +201,8 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # DS Homeworks Trie Trie_HW3_2Hard
 # add_executable(Trie_ ${homework_Trie_dir}/Trie_HW3_2Hard/01.cpp)
 
-#-----------------------------------------------------------------------------#
 
-#*******************************Hash Table****************************#
+#---------------------------Hash Table----------------------------#
 
 # DS Homeworks HASH Hash_HW1_5Med
 # add_executable(HASH_ ${homework_Hashing_dir}/Hash_HW1_5Med/01.cpp)
@@ -202,4 +211,4 @@ add_executable( SLL_06_linked_list_without_tail_length ${homework_SLL_dir}/SLL-H
 # add_executable(HASH_ ${homework_Hashing_dir}/Hash_HW2_5Med/01.cpp)
 
 
-#-----------------------------------------------------------------------------#
+#-----------------------------END---------------------------------#

@@ -4,7 +4,6 @@ using namespace std;
 
 int main()
 {
-    cout << "hello algo" << "\n";
 
-    return 0;
+	return 0;
 }
