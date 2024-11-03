@@ -24,13 +24,29 @@ void print_adjaceny_matrix(GRAPH &graph)
         for (int to = 0; to < nodes; to++)
         {
             if (graph[from][to] > 0)
-                cout << "From " << from << " To " << to << "there are " << graph[from][to] << "edges\n";
+                cout << "From " << from << " To " << to << " there are " << graph[from][to] << " edges\n";
         }
     }
 }
 
 int main()
 {
+    // build and create the graph
+    int nodes, edges;
+    cout << "Enter # of nodes and edges: ";
+    cin >> nodes >> edges;
+
+    GRAPH graph(nodes, vector<int>(nodes));
+
+    cout << "Enter the existing edges from to (idx): ";
+    for (int e = 0; e < edges; e++)
+    {
+        int from, to;
+        cin >> from >> to;
+        add_directed_edge(graph, from, to);
+    }
+
+    print_adjaceny_matrix(graph);
 
     return 0;
 }
