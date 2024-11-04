@@ -1,5 +1,8 @@
 # Data structures
 
+A data structure is a way to store
+and organize data in order to facilitate access and modiûcations.
+
 ## Linear Data structures 
 - array
 - vector
