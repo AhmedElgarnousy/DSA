@@ -54,7 +54,8 @@ void print(int *arr, int sz)
 int main()
 {
     const int sz = 7;
-    int arr[sz]{9, 2, 10, 0, 5, 3, 90};
+    int arr[sz]{90, 80, 70, 60, 50, 40, 30};
+    // int arr[sz]{9, 2, 10, 0, 5, 3, 90};
 
     // print arr in
     print(arr, sz);

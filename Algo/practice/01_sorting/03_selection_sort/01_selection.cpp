@@ -1,40 +1,45 @@
 #include <iostream>
+#include <vector>
+using namespace std;
 
-// using namespace std;
-void print(int *arr, int sz)
+void selection_sort(vector<int> &nums)
 {
-    for (int i = 0; i < sz; i++)
+    int n = nums.size();
+
+    for (int i = 0; i < n - 1; i++)
     {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << "\n";
-}
-void selection_sort(int *arr, int sz)
-{
-    int smIdx = 0;
-    for (int i = 0; i < sz - 1; i++)
-    {
-        smIdx = i;
-        for (int j = i; j < sz; j++)
-        {
-            // search for smallest number
-            if (arr[smIdx] > arr[j + 1])
-                smIdx = j + 1;
-        }
-        if (smIdx != i)
-            std::swap(arr[smIdx], arr[i]);
+        // Find the minimum element in unsorted array
+        int mn_idx = i;
+        for (int j = i + 1; j < n; j++)
+            if (nums[j] < nums[mn_idx])
+                mn_idx = j;
+
+        // Put the min in its right place
+        swap(nums[mn_idx], nums[i]);
     }
 }
+
+vector<int> read_vector()
+{
+    int n;
+    cin >> n;
+
+    vector<int> v(n);
+    for (int i = 0; i < n; ++i)
+        cin >> v[i];
+
+    return v;
+}
+
 int main()
 {
-    const int sz = 7;
-    int arr[sz]{9, 2, 10, 0, 5, 13, 90};
+    vector<int> v = read_vector();
+    selection_sort(v);
 
-    print(arr, sz);
+    for (int i = 0; i < (int)v.size(); ++i)
+    {
+        cout << v[i] << " ";
+    }
 
-    // selection sort
-    selection_sort(arr, sz);
-
-    print(arr, sz);
     return 0;
 }

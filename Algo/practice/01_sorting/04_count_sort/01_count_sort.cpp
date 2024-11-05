@@ -1,48 +1,51 @@
 #include <iostream>
+#include <vector>
+using namespace std;
 
-// using namespace std;
-void print(int *arr, int sz)
+void countSort(vector<int> &array)
 {
-    for (int i = 0; i < sz; i++)
-    {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << "\n";
-}
-void count_sort(int *arr, int sz)
-{
-    // find the max
-    int mxValue = 0;
-    for (int i = 0; i < sz; i++)
-        if (mxValue < arr[i])
-            mxValue = arr[i];
+    // Find the largest element of the array
+    int size = array.size(), mxValue = array[0];
+    for (int i = 1; i < size; ++i)
+        if (array[i] > mxValue)
+            mxValue = array[i];
 
-    // freq array of max array value created with zero values
-    int freqArr[mxValue + 1]{0};
-    for (int i = 0; i < sz; i++)
-        freqArr[arr[i]] += 1;
+    // Compute Frequency
+    vector<int> count(mxValue + 1); // zeros
+    for (int i = 0; i < size; ++i)
+        count[array[i]] += 1;
 
-    // set the sorted array
-
+    // Put the values back to the array
     int idx = 0;
     for (int i = 0; i <= mxValue; ++i)
     {
-        for (int j = 0; j < freqArr[i]; ++j, ++idx)
-        {
-            arr[idx] = i;
-        }
+        for (int j = 0; j < count[i]; ++j, ++idx)
+            array[idx] = i;
     }
 }
+
+vector<int> read_vector()
+{
+    int n;
+    cin >> n;
+
+    vector<int> v(n);
+    for (int i = 0; i < n; ++i)
+        cin >> v[i];
+
+    return v;
+}
+
 int main()
 {
-    const int sz = 7;
-    int arr[sz]{2, 5, 2, 0, 1, 2, 2};
+    // vector<int> v = read_vector();
+    vector<int> v{5, 30, 333, 4, 10, 11, 10};
+    countSort(v);
 
-    print(arr, sz);
+    for (int i = 0; i < (int)v.size(); ++i)
+    {
+        cout << v[i] << " ";
+    }
 
-    // count sort
-    count_sort(arr, sz);
-
-    print(arr, sz);
     return 0;
 }
