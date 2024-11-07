@@ -2,11 +2,8 @@
 
 - binary search educational case
 - why this called binary search ?
-  - 2^8 = 256 , 2^7 = 128
-- Intermidate overflow -> int mid = (start + end)/ 2;
-- that is the interesting part
 
-- another formula for mid = s+1/2 + e/2
+  - 2^8 = 256 , 2^7 = 128
 
 - leetcode_441_coins
 - bs generalization
