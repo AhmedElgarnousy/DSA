@@ -15,7 +15,7 @@ void add_undirected_edge(GRAPH &graph, int from, int to)
     graph[to].push_back(from);
 }
 
-void print_adjaceny_matrix(GRAPH &graph)
+void print_adjaceny_list(GRAPH &graph)
 {
     int nodes = graph.size();
     for (int from = 0; from < nodes; from++)
@@ -42,7 +42,7 @@ int main()
         cin >> from >> to;
         add_directed_edge(graph, from, to);
     }
-    print_adjaceny_matrix(graph);
+    print_adjaceny_list(graph);
     return 0;
 }
 /*
